@@ -1,0 +1,188 @@
+/*Page body style*/
+ body {
+    background-image:url('css_fundo.png');
+    background-repeat:repeat;
+}
+/*Page header style*/
+ #top {
+    background-color:rgba(255, 255, 255, 0.1);
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:auto;
+    box-shadow:2px 0px 8px #000;
+}
+#top img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*The card area style*/
+ #card_area {
+    padding-top:115px;
+    width:100%;
+    height:100%;
+    /*-moz-column-count:2;*/
+    /* Firefox */
+    /*-webkit-column-count:2;*/
+    /* Safari and Chrome */
+    /*column-count:2;*/
+    /*For animations with 3d*/
+    perspective: 2400px;
+    -webkit-perspective: 2400px;
+}
+/*Card style*/
+ .thought_card {
+    background-image:url('css_card.png');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    width:450px;
+    height:300px;
+    margin: 10px;
+    font-family:'Nunito', sans-serif;
+    border-radius:15px;
+    box-shadow:0px 2px 8px #000;
+    /*This is to avoid the card breaking in the columns*/
+    display: inline-block;
+    animation: show_card 5s;
+    -webkit-animation: show_card 5s;
+    z-index:-1;
+}
+.thought_card .title {
+    font-size:30px;
+    position:relative;
+    left:2%;
+    top:2.4%;
+    z-index:2;
+}
+.thought_card .content {
+    font-size:15px;
+    position:relative;
+    left:3%;
+    top:10px;
+    width:92%;
+    height:60%;
+    text-align:justify;
+    text-justify:inter-word;
+    z-index:3;
+}
+.thought_card .buttons {
+    font-size:10px;
+    position:relative;
+    left:71%;
+    top:5%;
+    z-index:4;
+}
+.thought_card .timer {
+    font-size:14px;
+    float:left;
+    position:relative;
+    left:3%;
+    top:7%;
+    z-index:5;
+}
+/*Add a new card button*/
+#newcard{
+    background-image:url('css_newcard.png');
+    background-repeat:no-repeat;
+    background-position:center; 
+    position:fixed;
+    top:5%;
+    left:-30px;
+    width:60px;
+    height:60px;
+    text-align:center;
+    transition: 0.3s;
+    z-index:600;
+}
+#newcard:hover{
+    left:5px;
+}
+#newcard:active {
+    top:7%;
+}
+
+/*Block the background when posting a new card*/
+ #bgblock{
+    background-color:rgba(0,0,0,0.6);
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0px;
+    left:0px;
+    display:none;
+    z-index:400;
+}
+/*New card form style*/
+ #form_newcard {
+    background-image:url('css_card.png');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-150px 0 0 -225px;
+    background-color:#fff;
+    width:450px;
+    height:300px;
+    z-index:1000;
+    border-radius:15px;
+    font-family:'Nunito', sans-serif;
+    display:none;
+}
+#form_newcard input[type=text] {
+    font-size:20px;
+    font-family:'Nunito', sans-serif;
+    border: 5px solid rgb(207, 208, 140);
+    background-color: rgb(227, 228, 160);
+    position:absolute;
+    border-radius:8px;
+    left:3%;
+    top:1.5%;
+    width:91%;
+}
+#form_newcard textarea {
+    font-size:15px;
+    font-family:'Nunito', sans-serif;
+    resize: none;
+    padding: 5px;
+    border: 5px solid rgb(207, 208, 140);
+    background-color: rgb(227, 228, 160);
+    position:absolute;
+    left:3%;
+    top:21%;
+    width:89%;
+    height:55%;
+    border-radius:8px;
+}
+#form_newcard input[type=submit] {
+    position:absolute;
+    left:86%;
+    top:83.5%;
+}
+/*Animations*/
+
+/*Card show animation*/
+ @keyframes show_card {
+    from {
+        transform: rotateY(90deg);
+        opacity:0;
+    }
+    to {
+        transform: rotateY(0deg);
+        opacity:1;
+    }
+}
+@-webkit-keyframes show_card
+/* Safari and Chrome */
+ {
+    from {
+        -webkit-transform: rotateY(90deg);
+        opacity:0;
+    }
+    to {
+        -webkit-transform: rotateY(0deg);
+        opacity:1;
+    }
+}

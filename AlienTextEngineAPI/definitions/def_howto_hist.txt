@@ -1,0 +1,16 @@
+To make a history you can either use java or TaleCode. Since tale code isn't avaliable
+yet, lets talk about java.
+<br><br>
+In java, creating a history can be pretty straight forward. You can either make a subclass
+of the History class to implement your own history model or you can instantiate one of the
+avaliable history models to fill them with stuff.
+<br>
+I recommend the latter one so lets talk about it. Later I'll add information about the first
+(the examples depict the first method also).
+To instantiate a history model just pick one of the models (currently a graph and a matrix model
+are avaliable) and do a normal instantiation. Like this:
+<br><br>
+<center><code class="language-java">MatrixHistory history = new MatrixHistory("A history name", "A author name", 5, 5);</code></center>
+<br>
+A matrix history comes with a internal matrix of scenes. In this example we created the instance with
+a 5x5 matrix (width x height).

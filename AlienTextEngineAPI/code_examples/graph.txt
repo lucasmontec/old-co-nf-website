@@ -1,0 +1,62 @@
+
+import alientextgame.core.Scene;
+import alientextgame.core.TaleDriver;
+import alientextgame.core.graph.GraphHistory;
+import alientextgame.core.graph.SceneNode;
+import alientextgame.model.action.Action;
+import alientextgame.model.general.Player;
+import alientextgame.model.item.Item;
+import alientextgame.model.specific.triggers.TriggerSceneExit;
+import alientextgame.script.ScriptedAction;
+
+
+public class TestGraphHistory {
+
+	private final GraphHistory	history;
+	private final RandomNameGenerator	rng	= new RandomNameGenerator();
+
+	public TestGraphHistory() {
+		history = new GraphHistory();
+		history.setHistoryHeader("Zombie", "The room");
+
+		/*
+		 * Starting scene
+		 */
+		SceneNode startingScene = new SceneNode();
+		startingScene.setName("White room.");
+		startingScene.setExitText("You left the room through the only door.");
+		startingScene
+		.setSceneLook("You see a big empty room with white plaster walls. There is a plastic lamp in the ceiling."
+				+ " The floor is made of concrete. There is a drain in the middle of the room.");
+		history.setInitialNode(startingScene);
+
+		// Loop the scene
+		startingScene.goesTo(startingScene);
+
+		startingScene.addTrigger(new TriggerSceneExit("Add_a_random_person_in_the_room", new Action() {
+
+			@Override
+			public void act(Player context, TaleDriver driver) {
+				Scene c = driver.getHistory().getActiveScene(context);
+				c.addActor(new Item(rng.getName(), "This is the most " + rng.getName() + " you'll get."));
+			}
+
+		}));
+
+		startingScene
+		.addTrigger(new TriggerSceneExit(
+				"Add_a_random_person_in_the_room",
+				new ScriptedAction(
+						"import alientextgame.core.*;\n"
+								+ "import alientextgame.model.general.*;\n"
+								+ "import alientextgame.tableTesting.*;\n"
+								+ "RandomNameGenerator	rng	= new RandomNameGenerator();\n"
+								+ "Scene c = driver.getHistory().getActiveScene(player);\n"
+								+ "c.addActor(new Item(rng.getName(), \"This is the most \" + rng.getName() + \" you'll get.\"));")));
+	}
+
+	public GraphHistory getHistory() {
+		return history;
+	}
+
+}

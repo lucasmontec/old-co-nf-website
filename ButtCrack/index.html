@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Buttcrack Server</title>
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.png" type="image/png">
+		<link href='http://fonts.googleapis.com/css?family=Dosis:400,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<audio id="audio" src="http://www.pacdv.com/sounds/fart-sounds/fart-7.mp3" ></audio>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			function play() {
+				var audio = document.getElementById("audio");
+				audio.play();
+			}
+
+
+			$(document).ready(function() {
+				$("#page_header").click(function() {
+					play();
+				});
+				/*if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+					$("html").niceScroll();
+					var scroll = new IScroll('html');
+				}*/
+			});
+
+			if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+				$(window).scroll(function() {
+					var fromtop = $(document).scrollTop();
+					// pixels from top of screen
+					$('#shield').css('opacity', (800 - fromtop) / 600);
+					// use a better formula for better fading
+				});
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="page_header">
+			<div class="fart">
+				<h1 id="page_title">ButtCrack Minecraft</h1>
+			</div>
+		</div>
+		<div id="shield">
+			<div id="shield_text">
+				<img id="logo" src="ButtCrackLogo.png"/>
+				<h1>An improved head cracking server!</h1>
+				<h3>*Cracks your butt*</h3>
+			</div>
+		</div>
+
+		<div id="content">
+
+			<div class="zone light">
+				<h2 class="title">Join us!</h2>
+				<p class="content">
+					Server IP:
+				</p>
+				<p class="ip">
+					192.99.18.173:25754
+				</p>
+
+				<h2 class="title">Gallery</h2>
+				<div align="center">
+				<div id="cp_widget_8d0e405e-2fdd-47ec-8b29-1881618aae3f">...</div>
+				</div>
+				<script type="text/javascript">
+				var cpo = []; cpo["_object"] ="cp_widget_8d0e405e-2fdd-47ec-8b29-1881618aae3f"; cpo["_fid"] = "AEOAScMGnUrB";
+				var _cpmp = _cpmp || []; _cpmp.push(cpo);
+				(function() { var cp = document.createElement("script"); cp.type = "text/javascript";
+				cp.async = true; cp.src = "//www.cincopa.com/media-platform/runtime/libasync.js";
+				var c = document.getElementsByTagName("script")[0];
+				c.parentNode.insertBefore(cp, c); })(); </script><noscript>Powered by Cincopa <a href='http://www.cincopa.com/video-hosting'>Video Hosting for Business</a> solution.</noscript>
+			</div>
+
+			<div class="zone dark">
+				<h2 class="title">Download our launcher</h2>
+				<a href="https://mega.co.nz/#!dZEmiTzA!Ock_IzEzxn_ZJGTScpmgEmSrbxjBBGONnQNieIa0wCU" target="_blank" class="action-button animate green">Download</a>
+			</div>
+
+			<div class="zone light">
+				<h2 class="title">News</h2>
+				<p class="content">
+					New site! Better and better everyday!
+				</p>
+				<p class="content">
+					New mods added: ComputerCraft, OpenPeripherals
+				</p>
+			</div>
+
+			<div class="zone dark" align="center">
+				<h2 class="title">Server Status: ButtCrack Main</h2>
+				<img src="http://192.99.18.173/index.php?r=status/200.png" alt="server status image">
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

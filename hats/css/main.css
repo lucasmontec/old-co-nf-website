@@ -1,0 +1,35 @@
+
+body, html{
+	font-family: 'Abel', sans-serif;
+	padding: 15px;
+}
+
+.header{
+	margin: 0px 0px 0px 15px;
+	font-family: 'Abel', sans-serif;
+}
+
+.header h1{
+	font-family: 'Abel', sans-serif;
+}
+
+.content-header{
+	margin: 10px 10px 10px 15px;
+	font-family: 'Abel', sans-serif;
+}
+
+.center{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.small-money{
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: #8AC007;
+}
+
+.low{
+	background-color: rgba(160,10,10,0.4);
+}

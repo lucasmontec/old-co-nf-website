@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap -->
+    	<link href="bootstrap/css/bootstrap-dark.min.css" rel="stylesheet">
+    	<link href="css/main.css" rel="stylesheet">
+    	<link href="css/resources.css" rel="stylesheet">
+    	<link href="css/players.css" rel="stylesheet">
+        
+        <title>HATS Interface Mock</title>
+    </head>
+    <body>
+    	<script src="jquery-1.11.3.min.js"></script>
+    	<script src="bootstrap/js/bootstrap.min.js"></script>
+    	<script src="main.js"></script>
+    	
+        <div class="page-header header"><h1>H.A.T.S <small>Interface Mock</small></h1></div>
+        
+        <div role="tabpanel">
+	        <!-- Nav tabs -->
+			<ul class="nav nav-tabs">
+			  <li role="presentation" class="active"><a href="#banco" aria-controls="banco" role="tab" data-toggle="tab">Banco</a></li>
+			  <li role="presentation"><a href="#loja" aria-controls="loja" role="tab" data-toggle="tab">Loja</a></li>
+			</ul>
+			        
+			<!-- Tab panes -->
+		  	<div class="tab-content">
+		  		<div role="tabpanel" class="tab-pane fade in active" id="banco">
+		  			<!-- banco -->
+		  			<h3 class="content-header">Banco</h3>
+		  			<div class="row">
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box">
+			  					<div class="player p1"><h4>Player 1</h4></div>
+			  					<div class="text-center">
+			  						<div class="small-money p1-meter">R$ 0,00</div>
+				  					<div class="btn-group btn-group-sm" role="group">
+									  <button type="button" class="btn btn-default" id="p1-loan">Empréstimo</button>
+									  <button type="button" class="btn btn-default" id="p1-pay">Pagar</button>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box">
+			  					<div class="player p2"><h4>Player 2</h4></div>
+			  					<div class="text-center">
+			  						<div class="small-money p2-meter">R$ 0,00</div>
+				  					<div class="btn-group btn-group-sm" role="group">
+									  <button type="button" class="btn btn-default" id="p2-loan">Empréstimo</button>
+									  <button type="button" class="btn btn-default" id="p2-pay">Pagar</button>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box">
+			  					<div class="player p3"><h4>Player 3</h4></div>
+			  					<div class="text-center">
+			  						<div class="small-money p3-meter">R$ 0,00</div>
+				  					<div class="btn-group btn-group-sm" role="group">
+									  <button type="button" class="btn btn-default" id="p3-loan">Empréstimo</button>
+									  <button type="button" class="btn btn-default" id="p3-pay">Pagar</button>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box">
+			  					<div class="player p4"><h4>Player 4</h4></div>
+			  					<div class="text-center">
+			  						<div class="small-money p4-meter">R$ 0,00</div>
+				  					<div class="btn-group btn-group-sm" role="group">
+									  <button type="button" class="btn btn-default" id="p4-loan">Empréstimo</button>
+									  <button type="button" class="btn btn-default" id="p4-pay">Pagar</button>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  			</div>
+		  		</div>
+		  		
+		  		<!-- loja -->
+		    	<div role="tabpanel" class="tab-pane fade" id="loja">
+		    		<h3 class="content-header">Loja</h3>
+		    		
+		    		<h4 class="content-header">Player:</h4>
+		    		<div class="row">
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box player-box-selected" id="p1-selector">
+			  					<div class="player p1"><h4>Player 1</h4></div>
+			  					<div class="small-money text-center p1-meter">R$ 0,00</div>
+							</div>
+		  				</div>
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box" id="p2-selector">
+			  					<div class="player p2"><h4>Player 2</h4></div>
+			  					<div class="small-money text-center p2-meter">R$ 0,00</div>
+							</div>
+		  				</div>
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box" id="p3-selector">
+			  					<div class="player p3"><h4>Player 3</h4></div>
+			  					<div class="small-money text-center p3-meter">R$ 0,00</div>
+							</div>
+		  				</div>
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box" id="p4-selector">
+			  					<div class="player p4"><h4>Player 4</h4></div>
+			  					<div class="small-money text-center p4-meter">R$ 0,00</div>
+							</div>
+		  				</div>
+		  			</div>
+		    		
+		    		<h4 class="content-header">Resources:</h4>
+		    		<!-- Simple -->
+		    		<div class="row">
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box">
+			  					<div class="resource r1"><h4>Iron</h4></div>
+			  					<div class="text-center">
+			  						<div class="small-money" id="iron-price">R$ 0,00</div>
+				  					<div class="btn-group btn-group-sm" role="group">
+									  <button type="button" class="btn btn-default" id="buy-iron">Comprar</button>
+									  <button type="button" class="btn btn-default" id="sell-iron">Vender</button>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box">
+			  					<div class="resource r2"><h4>Wood</h4></div>
+			  					<div class="text-center">
+			  						<div class="small-money" id="wood-price">R$ 0,00</div>
+				  					<div class="btn-group btn-group-sm" role="group">
+									  <button type="button" class="btn btn-default" id="buy-wood">Comprar</button>
+									  <button type="button" class="btn btn-default" id="sell-wood">Vender</button>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box">
+			  					<div class="resource r3"><h4>Water</h4></div>
+			  					<div class="text-center">
+			  						<div class="small-money" id="water-price">R$ 0,00</div>
+				  					<div class="btn-group btn-group-sm" role="group">
+									  <button type="button" class="btn btn-default" id="buy-water">Comprar</button>
+									  <button type="button" class="btn btn-default" id="sell-water">Vender</button>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box">
+			  					<div class="resource r4"><h4>Coal</h4></div>
+			  					<div class="text-center">
+			  						<div class="small-money" id="coal-price">R$ 0,00</div>
+				  					<div class="btn-group btn-group-sm" role="group">
+									  <button type="button" class="btn btn-default" id="buy-coal">Comprar</button>
+									  <button type="button" class="btn btn-default" id="sell-coal">Vender</button>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  			</div>
+		  			
+		  			<!-- Improved -->
+		  			<div class="row">
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box">
+			  					<div class="resource r1"><h4>Iron+</h4></div>
+			  					<div class="text-center">
+			  						<div class="small-money" id="iron-plus-price">R$ 0,00</div>
+				  					<div class="btn-group btn-group-sm" role="group">
+									  <button type="button" class="btn btn-default" id="buy-iron-plus">Comprar</button>
+									  <button type="button" class="btn btn-default" id="sell-iron-plus">Vender</button>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box">
+			  					<div class="resource r2"><h4>Wood+</h4></div>
+			  					<div class="text-center">
+			  						<div class="small-money" id="wood-plus-price">R$ 0,00</div>
+				  					<div class="btn-group btn-group-sm" role="group">
+									  <button type="button" class="btn btn-default" id="buy-wood-plus">Comprar</button>
+									  <button type="button" class="btn btn-default" id="sell-wood-plus">Vender</button>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box">
+			  					<div class="resource r3"><h4>Water+</h4></div>
+			  					<div class="text-center">
+			  						<div class="small-money" id="water-plus-price">R$ 0,00</div>
+				  					<div class="btn-group btn-group-sm" role="group">
+									  <button type="button" class="btn btn-default" id="buy-water-plus">Comprar</button>
+									  <button type="button" class="btn btn-default" id="sell-water-plus">Vender</button>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  				<div class="col-sm-6 col-md-3">
+		  					<div class="player-box">
+			  					<div class="resource r4"><h4>Coal+</h4></div>
+			  					<div class="text-center">
+			  						<div class="small-money" id="coal-plus-price">R$ 0,00</div>
+				  					<div class="btn-group btn-group-sm" role="group">
+									  <button type="button" class="btn btn-default" id="buy-coal-plus">Comprar</button>
+									  <button type="button" class="btn btn-default" id="sell-coal-plus">Vender</button>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  			</div>
+		  		</div>
+		    		
+		    	</div>
+		  	</div>      
+		
+    </body>
+</html>
+

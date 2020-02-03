@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="900px"
+	 height="900px" viewBox="0 0 900 900" enable-background="new 0 0 900 900" xml:space="preserve">
+<g id="Grid" display="none">
+	
+		<rect x="71" y="68.959" display="inline" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="737.755" height="752.041"/>
+	
+		<rect x="176.156" y="178.197" transform="matrix(0.7071 0.7071 -0.7071 0.7071 441.3207 -181.6055)" display="inline" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="527.444" height="527.444"/>
+	
+		<circle display="inline" fill="none" stroke="#000000" stroke-width="7" stroke-miterlimit="10" cx="166.408" cy="776.781" r="375"/>
+	
+		<circle display="inline" fill="none" stroke="#000000" stroke-width="7" stroke-miterlimit="10" cx="709.812" cy="776.174" r="375"/>
+	
+		<line display="inline" fill="none" stroke="#000000" stroke-width="7" stroke-miterlimit="10" x1="439.878" y1="68.959" x2="439.878" y2="814.878"/>
+</g>
+<g id="Box">
+	<polygon fill="#00A651" stroke="#000000" stroke-width="7" stroke-miterlimit="10" points="439.878,815.98 62.878,440.878 
+		439.878,65.776 816.878,440.878 	"/>
+</g>
+<g id="Butt">
+	<path fill="#FFF200" stroke="#000000" stroke-width="7" stroke-miterlimit="10" d="M62.878,440.878
+		c0,0,90.976-63.571,226.666-17.253c86.373,29.483,151.187,91.364,151.187,91.364S509.776,450,596.825,418.73
+		c110.65-39.747,220.052,22.147,220.052,22.147l-377,374L62.878,440.878z"/>
+</g>
+<g id="Camada_4">
+	
+		<line fill="none" stroke="#000000" stroke-width="7" stroke-miterlimit="10" x1="440.731" y1="514.989" x2="440.731" y2="586.306"/>
+</g>
+</svg>

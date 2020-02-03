@@ -1,0 +1,4 @@
+admin:12345:1
+kleiner:1111:0
+zumbi:8585:2
+cash:2822:2

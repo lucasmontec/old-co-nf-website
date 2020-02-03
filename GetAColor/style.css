@@ -1,0 +1,37 @@
+body{
+	background-color: rgb(255,255,255);
+	transition: background-color 0.5s ease;
+}
+
+#color_meter{
+	background-color: rgba(255,255,255,0.4);
+	border-radius: 6px;
+	width: 160px;
+	height: 80px;
+	transition: width 0.2s ease;
+}
+
+#color_meter #color_field{
+	margin: 0px;
+	padding-top: 21px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 18px;
+	font-family: 'helvetica';
+	cursor: pointer;
+}
+
+#color_meter #date_field{
+	margin: 0px;
+	padding-top: 5px;
+	text-align: center;
+	font-size: 15px;
+	line-height: 15px;
+	font-family: 'helvetica';
+}
+
+@media only screen and (max-width:450px){
+	#color_meter{
+		width: 100%;
+	}
+}

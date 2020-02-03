@@ -1,0 +1,76 @@
+html, body{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	background-color:rgb(90,90,170);
+}
+
+#title-bar{
+	margin: 0px;
+	padding: 15px;
+	color: white;
+	text-align: center;
+	background-color: rgb(120,120,200);
+	background: repeating-linear-gradient(
+	  45deg,
+	  rgb(120,120,200),
+	  rgb(120,120,200) 10px,
+	  rgb(130,130,210) 10px,
+	  rgb(130,130,210) 20px
+	);
+}
+
+#title-bar h1{
+	text-shadow: 0px 1px 0px rgba(220, 220, 220, 1), 0px 2px 0px rgba(200, 200, 200, 1), 0px 3px 0px rgba(180, 180, 180, 1);
+	font-family: "Nunito";
+}
+
+#Mumble{
+	width:20%;
+
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 20px;
+	
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 10px;
+}
+
+#Mumble h2{
+	font-family: "Nunito"; 
+	color: #ffffff;
+}
+
+#Mumble p{
+	font-family: "Work Sans"; 
+	font-weight: bold;
+	color: #ffffff;
+}
+
+
+.center{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn {
+  -webkit-border-radius: 14;
+  -moz-border-radius: 14;
+  border-radius: 14px;
+  color: #ffffff;
+  font-size: 12px;
+  background: #34d976;
+  padding: 6px 15px 6px 15px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cfc89;
+  text-decoration: none;
+}

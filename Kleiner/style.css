@@ -1,0 +1,115 @@
+body, html{
+
+    background-image: url(img/dark_embroidery.png); 
+    
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.erro{
+    
+    width: 25px;
+    height: 25px;
+    
+    background-image: url(img/error.png);
+    background-size: cover;
+    background-repeat: none;
+    
+    display: inline-block;
+    vertical-align: middle;
+    
+    margin-top: 15px;
+
+}
+
+.login_form{
+    
+    width: 13%;
+    padding: 20px;
+    background-color: rgba(203,25,100,0.3);
+    border-radius: 20px;
+    
+    text-align: center;
+    
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.login_form p{
+    
+    color: whitesmoke;
+    margin: 10px 0px 5px 0px;
+
+}
+
+.login_form input{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.login_form_text_input{
+
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2px;
+    
+    background-color: rgb(150,150,150);
+    color: white;
+
+}
+
+#user, #pass{
+    
+    width: 90%;
+    
+}
+
+
+#fucking_p{
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    color: whitesmoke;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 15px;
+    margin-left: 5px;
+    
+}
+
+#botao{
+
+    margin-top: 14px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    
+    background-color: rgb(120,120,120);
+    
+    color: whitesmoke;
+    box-shadow: 0px 2px 0px rgb(80,80,80);
+    
+    transition: all 0.2s;
+
+}
+
+#botao:active{
+
+    transform: translateY(2px);
+    box-shadow: 0px 0px 0px rgb(80,80,80);
+    
+}

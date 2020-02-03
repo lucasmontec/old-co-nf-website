@@ -1,0 +1,158 @@
+
+import alientextgame.core.TaleDriver;
+import alientextgame.core.matrix.MatrixHistory;
+import alientextgame.core.matrix.SceneCell;
+import alientextgame.model.action.Action;
+import alientextgame.model.action.IAction;
+import alientextgame.model.general.Player;
+import alientextgame.model.general.PlayerState;
+import alientextgame.model.graph.ActionGraphStreamReader;
+import alientextgame.model.graph.ActionNode;
+import alientextgame.model.item.Item;
+import alientextgame.model.item.ItemContainer;
+import alientextgame.model.item.UsableActionItem;
+import alientextgame.model.specific.actions.actiongraph.Close;
+import alientextgame.model.specific.actions.chat.Say;
+import alientextgame.model.specific.triggers.TriggerCommandCount;
+import alientextgame.model.specific.triggers.TriggerCommandCountSpecific;
+
+
+public class DocStory extends MatrixHistory {
+	public DocStory() {
+		super("DocStory", "Zombie", 10, 10);
+
+		/*
+		 * FRONT YARD
+		 */
+		map[0][0] = new SceneCell("Doc's front yard.",
+				"You just reached Doc's home with your skate board. It is about 7 o'clock",
+				"You left the frontyard. You opened the door and walked in.",
+				"You see a rug. You know the door key lies under it.");
+		map[0][0].addActor(new Item("Skateboard",
+				"You see an awesome skateboard that plays power of love when you ride it."));
+		map[0][0].addActor(new Item("Fence", "Just a normal iron fence."));
+		map[0][0].addTrigger(new TriggerCommandCountSpecific("coutner", new Say(
+				"You can hear various clocks ticking inside. And suddenly a can opener starts to run..."),
+				"look", 2));
+
+		/*
+		 * DOCS HOUSE
+		 */
+		map[0][1] = new SceneCell(
+				"Doc's house.",
+				"You used the key under the rug and opened the door.\n As you"
+						+ "walk in you see that the tv is on and there is dog food in Einstein's pot. No one is home.\n"
+						+ "There is also a smell of burnt toasts.",
+						"",
+						"The place has about 40 clocks all over the walls. Its cozy"
+								+ "but very messy at the same time. You don't even mind the plutonium crate under the bed.");
+		ItemContainer einsteinFoodPot = new ItemContainer("Einstein's food pot.",
+				"A little dog food container filled.", 2);
+
+		IAction foodAction = (Player p, TaleDriver d) -> {
+			p.addPlayerState(new PlayerState("Dog food eater!", "This player is a homeless hungry man!",
+					"You earned the achievement: HOMELESS", 1) {
+				@Override
+				public void applyState(Player pl) {
+					pl.narrate("Not even a homeless guy would do that I think... But you did! Congratulations.");
+				}
+			});
+		};
+
+		UsableActionItem dogFood2 = new UsableActionItem(foodAction, "Dog food.", "Very smelly dog food.",
+				"You eat the dog food. It doesn't taste good.", 1);
+
+		einsteinFoodPot.store(dogFood2);
+		map[0][1].addActor(einsteinFoodPot);
+
+		IAction guitarAction = (Player p, TaleDriver d) -> {
+			p.addPlayerState(new PlayerState("1985 Pick master!", "This player is rock it self!",
+					"You earned the achievement: 1985 Pick master!", 1) {
+				@Override
+				public void applyState(Player pl) {
+					pl.narrate("Just too good to be true! Even chuck berry felt something.");
+				}
+			});
+		};
+
+		UsableActionItem hugeGuitarAmplifier = new UsableActionItem(
+				guitarAction,
+				"Huge guitar amplifier",
+				"You see a VERY BIG ASS guitar amplifier. Your guitar pick just shines to that.",
+				"You tune every knob to MAX. Various close up scenes at the amplifier interface intensify the atmosphere.\n"
+						+ "After tuning every thing, you take your little guitar and in a stylish play, blow up your self and the\n"
+						+ "machine.", 1);
+
+		map[0][1].addActor(hugeGuitarAmplifier);
+		map[0][1].addActor(new Item("Plutonium crate.",
+				"Just an ordinary 1985 plutonium crate. Some would say you could buy that in\n"
+						+ "any corner store."));
+		map[0][1].addActor(new Item("Bed", "The bed is not tidy."));
+		map[0][1].addTrigger(new TriggerCommandCount("_8:25", new Action() {
+
+			@Override
+			public void act(Player player, TaleDriver driver) {
+				driver.getCommandProcessor().installStreamReader(
+						new ActionGraphStreamReader(player, new PhoneDocChat(player), true));
+				player.narrate("Suddenly, while you where playing around, the phone rings. You pick it up.");
+			}
+
+		}, 5));
+	}
+
+	public class PhoneDocChat extends ActionNode {
+
+		private final String	DOC	= "Doc. Brown";
+
+		private PhoneDocChat(Player player) {
+
+			// DocGreets always
+			ActionNode docGreet = new ActionNode(Action.parallel( //
+					new Say(DOC, "Hello " + player.getName() + "! It's Doc Brown!"), //
+					new Say(DOC, "Mind the little problem with the amplifier."), //
+					new Say(player.getName(), "Hmmm, about that..."),//
+					new Say(DOC, "Nevermind. Marty I'll need your help today at 1:00 am at the mall."), //
+					new Say(player.getName(), "1:00 am?! Doc, are you crazy?"),//
+					new Say(DOC, "I really need you there marty, I'm on the edge of a brakethrough."), //
+					new Say("*All clocks start ringing!*") //
+					));
+
+			docGreet.setNoMatchCall(true);
+			addSon(docGreet);
+
+			// Now possible answers
+			ActionNode clocks = new ActionNode(Action.parallel(
+					//
+					new Say(player.getName(), "Hey doc, all your clocks are ringing!"),//
+					new Say(DOC, "Hmmm. What time do they mark?"),//
+					new Say(player.getName(), "Yeah, they mark 8 o'clock."),//
+					new Say(DOC, "Perfect, my experiment worked! They are all exactly 25 minutes slow!"),//
+					new Say(player.getName(),
+							"Wait a minute, wait a minute! DOC!\nAre you telling me its 8:25?!"),//
+							new Say(player.getName(), "Damn! I'm late for school!")//
+					),//
+					"the clocks", "ringing", "noise");
+			clocks.setNoMatchCall(true);
+			docGreet.addSon(clocks);
+
+			ActionNode whereAreYou = new ActionNode(Action.parallel(//
+					new Say(player.getName(), "Doc, Where are you?"),//
+					new Say(DOC, "I'm at the mall, can't say what I'm doing just now..."),//
+					new Say(DOC, "What is all that noise?")//
+					),//
+					"where are you", "where", "?");
+			docGreet.addSon(whereAreYou);
+			whereAreYou.addSon(clocks);
+
+			ActionNode end = new ActionNode(Action.parallel(//
+					new Say(player.getName(), "Gotta go doc, bye!"),//
+					new Say(DOC, "Bye marty!"),//
+					new Say("*Ambient music: Pam pam pam pam.... POWER OF LOVE, IS A CURIOUS THING..*"),//
+					new Close(clocks)//
+					),//
+					"bye", "good bye", "tchau");
+			end.setNoMatchCall(true);
+			clocks.addSon(end);
+		}
+
+	}

@@ -1,0 +1,15 @@
+In this engine a history is a model that contain information about a situation.
+Histories contain the ambients and things that can happen in them given a players action.
+The TaleDriver runs this model (and any implementations of it).
+A history is not an entire game, but most of it.
+This is better explained design-wise like this:
+<br><br>
+A game:<br>
+A game in this engine is the set of objects, rooms, player states, triggers
+and all avaliable assets that create its universe. Things that exist.
+<br><br>
+A history:<br>
+A history in this engine is ambient that exists in a game universe.
+It uses the game assets to create a narrative around scenes adding things
+that can happen, characters and avaliable interactions. Imagine it as a binder
+that links player interaction to a bunch of possible outcomes.

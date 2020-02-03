@@ -1,0 +1,69 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    font-family: 'Dosis'
+}
+
+body{
+    background-image: url(bg.png);
+}
+
+#FormatterBox {
+	margin: auto;
+    height: 440px;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#ConverterForm{
+    display: block;
+    margin: auto;
+    width: 500px;
+}
+
+#Title {
+	text-align: center;
+    color: rgb(0,140,0);
+}
+#Two {
+	text-align: center;
+    color: rgb(0,180,0);
+}
+
+textarea{
+    width: 100%;
+    resize: none;
+    margin: 6px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Dosis';
+    padding: 10px;
+}
+
+button{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.tooltip {}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 310px;
+    background-color: black;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 8px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

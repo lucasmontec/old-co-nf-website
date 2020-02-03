@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>NeuralNet Genetic Algorithm in ScalaJS</title>
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <!-- Include Scala.js compiled code -->
+    <script type="text/javascript" src="neuralnet-opt.js"></script>
+    
+    <!-- Page -->
+    <h1 id="title">Neural network with ScalaJS</h1>
+      <h2 id="sub"><a href="http://zumbi.co.nf">By Zombie</a></h2>
+    <canvas id="Canvas" width="800px" height="600px"></canvas>
+    <button class="btn" id="toggleFast" type="button" onclick="app.NeuralApp().toggleFastIterations();">toggle fast iterations</button> 
+     
+        <!-- Run the app -->
+    <script type="text/javascript">
+    	app.NeuralApp().main();
+    </script>
+  </body>
+</html>
